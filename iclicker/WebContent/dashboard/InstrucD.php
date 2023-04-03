@@ -61,14 +61,16 @@ error_reporting(E_ALL);
   		
 
   		// retrieve the courses being taught by the instructor
-  		$sql = "SELECT course_name FROM Courses WHERE instructor_id = $instructor_id";
+  		$sql = "SELECT course_name,instructor_id FROM Courses WHERE instructor_id = $instructor_id";
   		$result = mysqli_query($conn, $sql);
 
   		// display the courses in a table
   		while ($row = mysqli_fetch_assoc($result)) {
-    		echo "<tr><td>" . $row['course_name'] . "</td></tr>";
-  		}
-
+			echo "<tr>";
+			// Store course name and instructor ID in the URL and link to InstructorView.php
+			echo "<td><a href='../Courses/InstructorView.php?course_name=" . urlencode($row['course_name']) . "&instructor_id=" . urlencode($row['instructor_id']) . "'>" . $row['course_name'] . "</a></td>";
+			echo "</tr>";
+		}
   		// close the  connection
   		mysqli_close($conn);
 		?>
