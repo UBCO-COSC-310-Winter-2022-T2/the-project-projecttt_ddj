@@ -34,11 +34,13 @@ if (!$conn) {
 $user_id = $_SESSION['user_id'];
 
 // Get user's enrollments
-$sql = "SELECT  courses.course_name 
+$sql = "SELECT courses.course_id, courses.course_name 
         FROM enrollments 
         INNER JOIN courses ON enrollments.course_id = courses.course_id 
         WHERE enrollments.user_id = $user_id";
 $result = mysqli_query($conn, $sql);
+
+
 
 // Check for query errors
 if (!$result) {
@@ -51,7 +53,7 @@ echo "<table>";
 echo "<tr><th>COURSES</th></tr>";
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td><a href='../Courses/CourseView.php'>" . $row['course_name'] . "</td></a>";
+    echo "<td><a href='../Courses/CourseView.php?course_name=" . urlencode($row['course_name']) . "&course_id=" . urlencode($row['course_id']) . "'>" . $row['course_name'] . "</a></td>";
     echo "</tr>";
 }
 echo "</table>";
