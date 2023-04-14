@@ -60,10 +60,11 @@ if (isset($_SESSION['user_id'])) {
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
 
-        echo '<h1>' . $course_name . '</h1>';
-        echo '<h3><i><b>End Class:</b></i> <a href="Classes/end_class.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';
-        echo '<h3><i><b>Start Poll:</b></i> <a href="Classes/startPoll.php?course_name=' . urlencode($course_name) . '">Click Here</a></h3>';    
-        echo '</body></html>';
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            echo $row['course_id'];
+
+        }
     }
 
 
