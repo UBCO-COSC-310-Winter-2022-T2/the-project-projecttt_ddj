@@ -56,16 +56,6 @@ if (isset($_SESSION['user_id'])) {
         $stats = "N/A";
     }
 
-    $sql = "SELECT * FROM class WHERE course_id = '$course_id' AND end_time IS NULL";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-
-        while ($row = mysqli_fetch_assoc($result)) {
-
-            echo $row['course_id'];
-
-        }
-    }
 
     $sql = "SELECT * FROM class WHERE course_id = '$course_id' AND end_time IS NULL";
 $result = $conn->query($sql);
@@ -76,14 +66,14 @@ if ($result->num_rows > 0) {
     $class_id = $row['class_id'];
     
     // Display the link to the class page
-    echo '<html><body><title>Qclicker System</title>';
-    echo '<h1>' . $course_name . '</h1>';
-    echo '<h3><i><b>Join Class:</b></i> <a href="UserInterface/classroom.php?class_id=' . urlencode($class_id) . '">Click Here</a></h3>';
+    echo '<html><body><title>'.$course_name.'</title>';
+    echo '<h1 align = "center">' . $course_name . '</h1>';
+    echo '<h2 align = "center"><i><b>Join Class:</b></i> <a href="Classes/JoinClass.php?class_id=' . urlencode($class_id) . '">Click Here</a></h3>';
     echo '</body></html>';
 } else {
     echo '<html><body><title>Qclicker System</title>';
-    echo '<h1>' . $course_name . '</h1>';
-    echo '<h3><i><b>No Class In Progress</b></i></h3>';
+    echo '<h1 align = "center">' . $course_name . '</h1>';
+    echo '<h2 align = "center"><i><b>No Class In Progress</b></i></h3>';
     echo '</body></html>';
 }
 

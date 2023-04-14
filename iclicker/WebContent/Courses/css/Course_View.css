@@ -51,3 +51,15 @@ a {
   font-size: 18px;
   font-weight: bold;
 }
+a.join-class {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
