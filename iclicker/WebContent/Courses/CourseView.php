@@ -55,6 +55,19 @@ if (isset($_SESSION['user_id'])) {
         $attendance = "N/A";
         $stats = "N/A";
     }
+
+    $sql = "SELECT * FROM class WHERE course_id = '$course_id' AND end_time IS NULL";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+
+        echo '<h1>' . $course_name . '</h1>';
+        echo '<h3><i><b>End Class:</b></i> <a href="Classes/end_class.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';
+        echo '<h3><i><b>Start Poll:</b></i> <a href="Classes/startPoll.php?course_name=' . urlencode($course_name) . '">Click Here</a></h3>';    
+        echo '</body></html>';
+    }
+
+
+
 } else {
     // Redirect to login page if the user is not logged in
     header("Location: ../login.php");
@@ -65,9 +78,10 @@ if (isset($_SESSION['user_id'])) {
 <html>
     <body>
         <title>Qclicker System</title>
+        <link rel ='stylesheet' href="css/Course_View.css">
         <div class = "course_name"><h1><?php echo $course_name ?></h1></div>
         <div class = "statistics"><h3><i><b>Grade: <?php echo $stats;?> </b></i></h3></div>
         <div class = "attendance"><h3><i>Attendance :  <?php echo $attendance;?></i></h3></div>
-        <a href = "../dashboard.php"></a>
+        <a href = "../dashboard.php">Go Back</a>
     </body>
 </html>

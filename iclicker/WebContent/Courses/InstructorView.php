@@ -38,6 +38,7 @@ if ($result->num_rows > 0) {
     echo '<h3><i><b>Start Class:</b></i> <a href="Classes/startclass.php?course_name=' . urlencode($course_name).'&course_id=' . urlencode($course_id).'&instructor_id='.urlencode($instructor_id) . '">Click Here</a></h3>';
     echo '</body></html>';
 }
+
 echo '<h3><i><b>Grading the results</b></i></h3>
 <h3><i><b>Submitting the correct answer</b></i></h3>
 <h3><i><b>Polling Statistics</b></i></h3>
@@ -45,3 +46,4 @@ echo '<h3><i><b>Grading the results</b></i></h3>
 
 
 ?>
+<link rel ='stylesheet' href="css/InstructorView.css">
