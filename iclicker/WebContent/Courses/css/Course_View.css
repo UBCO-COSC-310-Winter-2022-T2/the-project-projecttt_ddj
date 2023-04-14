@@ -1,0 +1,55 @@
+
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  .course_name {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .course_name h1 {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .statistics {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .statistics h3 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .statistics b {
+    font-weight: bold;
+  }
+  
+  .attendance {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .attendance h3 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .attendance i {
+    font-style: italic;
+  }
+  
+  a {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
