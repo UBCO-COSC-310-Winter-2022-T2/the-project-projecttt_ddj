@@ -1,5 +1,9 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if (isset($_GET['course_id']) && isset($_GET['course_name'])) {
     $course_id = $_GET['course_id'];
     $course_name = $_GET['course_name'];
@@ -37,12 +41,19 @@ if (isset($_SESSION['user_id'])) {
 
     $sql = "SELECT grades.attendance, grades.marks 
             FROM grades 
-            WHERE grades.course_id = $course_id";
+            WHERE grades.course_id = $course_id 
+            AND grades.student_id = $user_id";
     $result = mysqli_query($conn, $sql);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $attendance = $row['attendance'];
-        $stats = $row['marks'];
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $attendance = $row['attendance'].'%';
+            $stats = $row['marks'].'%';
+        }
+    } else {
+        // Set grades as N/A if not available
+        $attendance = "N/A";
+        $stats = "N/A";
     }
 } else {
     // Redirect to login page if the user is not logged in
@@ -50,12 +61,13 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
+
 <html>
     <body>
-<title>Qclicker System</title>
-<div class = "course_name"><h1><?php echo $course_name ?></h1></div>
-<div class = "statistics"><h3><i><b>Statistics: <?php echo $stats;?> %</b></i></h3></div>
-<div class = "attendance"><h3><i>Attendance :  <?php echo $attendance;?> %</i></h3></div>
-<a href = "../dashboard.php">
-</body>
+        <title>Qclicker System</title>
+        <div class = "course_name"><h1><?php echo $course_name ?></h1></div>
+        <div class = "statistics"><h3><i><b>Grade: <?php echo $stats;?> </b></i></h3></div>
+        <div class = "attendance"><h3><i>Attendance :  <?php echo $attendance;?></i></h3></div>
+        <a href = "../dashboard.php"></a>
+    </body>
 </html>
