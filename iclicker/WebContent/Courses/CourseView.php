@@ -67,6 +67,26 @@ if (isset($_SESSION['user_id'])) {
         }
     }
 
+    $sql = "SELECT * FROM class WHERE course_id = '$course_id' AND end_time IS NULL";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Get the class ID
+    $row = $result->fetch_assoc();
+    $class_id = $row['class_id'];
+    
+    // Display the link to the class page
+    echo '<html><body><title>Qclicker System</title>';
+    echo '<h1>' . $course_name . '</h1>';
+    echo '<h3><i><b>Join Class:</b></i> <a href="UserInterface/classroom.php?class_id=' . urlencode($class_id) . '">Click Here</a></h3>';
+    echo '</body></html>';
+} else {
+    echo '<html><body><title>Qclicker System</title>';
+    echo '<h1>' . $course_name . '</h1>';
+    echo '<h3><i><b>No Class In Progress</b></i></h3>';
+    echo '</body></html>';
+}
+
 
 
 } else {
@@ -76,13 +96,4 @@ if (isset($_SESSION['user_id'])) {
 }
 ?>
 
-<html>
-    <body>
-        <title>Qclicker System</title>
-        <link rel ='stylesheet' href="css/Course_View.css">
-        <div class = "course_name"><h1><?php echo $course_name ?></h1></div>
-        <div class = "statistics"><h3><i><b>Grade: <?php echo $stats;?> </b></i></h3></div>
-        <div class = "attendance"><h3><i>Attendance :  <?php echo $attendance;?></i></h3></div>
-        <a href = "../dashboard.php">Go Back</a>
-    </body>
-</html>
+<h3><i><b><a href = "../dashboard.php">Go Back</a></b></i></h3>'
