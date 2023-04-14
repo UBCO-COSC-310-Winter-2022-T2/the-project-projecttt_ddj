@@ -96,5 +96,5 @@ if ($result->num_rows > 0) {
 }
 ?>
 
-<h3><i><b><a href = "../dashboard.php">Go Back</a></b></i></h3>'
-<link rel ='stylesheet' href="css/CourseView.css">
+<h3><i><b><a href = "../dashboard.php">Go Back</a></b></i></h3>
+<link rel ='stylesheet' href="css/Course_View.css">
