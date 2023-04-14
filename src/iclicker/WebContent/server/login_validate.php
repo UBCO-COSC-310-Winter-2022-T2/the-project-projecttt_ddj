@@ -24,17 +24,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
     if (!empty($username) && !empty($password)) 
     {
-        $host = 'localhost';
-        $dbusername = 'dhairya';
-        $dbpassword = 'db19082002';
-        $dbname = 'iclicker';
-        $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
+        $dbhost = "localhost";
+        $dbusername = "dhairya";
+        $dbpassword = "db19082002";
+        $dbname = "iclicker";
 
-        // Checking for connection
-        if(!$conn)
-        {
-            die("Connection Failed".mysqli_connect_error());
-        }
+        $conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
+
+    if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+    }
 
         // Checking whether user exists
         $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
