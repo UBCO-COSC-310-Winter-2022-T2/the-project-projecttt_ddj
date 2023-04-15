@@ -60,19 +60,11 @@ COMPLETED FEATURES :
 4.	Login/Create account page for the instructor
 5.	Student (after logging in) can view their courses
 6.	Students can join their courses , and look at their attendance and statistics (performance in the class)
-7.	Instructors (after logging in) can view their courses
+7.	Instructors (after logging in) can view their course.
 8.	Instructors can add new courses
+9.	Instructors (after logging in) can start the class
+- 	Incomplete feature- Instructors can grade the results, this is one of the features in terms of the instructor that was not completed due to time constraints. it required implementation of some advanced coding functions and due to the limited time frame and other prior commitments we faced issues as a team in completing this feature with full efficiency.
 
-
-
-
-
-FEATURES IN PROGRESS :
--	Instructor Overview 
-1.	Instructors (after logging in) can start the class
-2.	Instructors can start the poll
-3.	Instructors can grade the results
-4.	 Instructors can display the polling statistics 
 
 
 
