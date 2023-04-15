@@ -3,7 +3,6 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 $servername = "localhost";
 $dbusername = "dhairya";
 $dbpassword = "db19082002";
@@ -30,7 +29,7 @@ if ($result->num_rows > 0) {
     echo '<html><body><title>Qclicker System</title>';
     echo '<h1>' . $course_name . '</h1>';
     echo '<h3><i><b>End Class:</b></i> <a href="Classes/end_class.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';
-    echo '<h3><i><b>Start Poll:</b></i> <a href="Classes/startPoll.php?course_name=' . urlencode($course_name) . '">Click Here</a></h3>';    
+    echo '<h3><i><b>Start Poll:</b></i> <a href="Classes/start_poll.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';    
     echo '</body></html>';
 } else {
     echo '<html><body><title>Qclicker System</title>';
