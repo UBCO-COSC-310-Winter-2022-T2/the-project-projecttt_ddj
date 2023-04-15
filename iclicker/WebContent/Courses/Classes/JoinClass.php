@@ -3,7 +3,12 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$sql = "SELECT * FROM poll WHERE poll_id = 1";
+$host = 'localhost';
+$dbusername = 'dhairya';
+$dbpassword = 'db19082002';
+$dbname = 'iclicker';
+$conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
+$sql = "SELECT * FROM poll ORDER BY poll_id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 0) {
@@ -12,7 +17,7 @@ if (mysqli_num_rows($result) == 0) {
 } else {
   $row = mysqli_fetch_assoc($result);
 
-  if ($row['end_time'] !== null && strtotime($row['end_time']) > time()) {
+  if ($row['end_time'] !== null ) {
     // Poll has started, display poll form
     ?>
     <html>
