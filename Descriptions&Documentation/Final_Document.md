@@ -54,4 +54,36 @@ There are various design patterns used for the polling system such as the observ
 
 There is just one task which is in backlog and that is to add the feature of grading the results by the instructor. This feature was in progress during milestone 4 but it required some advanced coding implementation for it to run efficiently.
 
+-    	How did your project management work for the team?  What was the hardest thing and what would you do the same/differently the next time you plan to complete a project like this? 
+Throughout the six milestones of this project our team followed the agile project development approach. This approach was iterative and flexible and allowed our team to manage our goals in an effective manner. We divided our goals into sprints and organized the tasks in each sprint. We held meetings and updated our Kanban board accordingly. 
+The hardest thing was writing the codes for some of the features in the given time constraint. Next time if we plan a project like this, we will try to ensure that the features that we are trying to implement are possible to be implemented in the given time constraint. However, we will still follow the agile approach to manage our project as we found it immensely helpful.
+
+-      Do you feel that your initial requirements were sufficiently detailed for this project?  Which requirements did you miss or overlook?
+
+Yes, most of the requirements were detailed however,  we overlooked one or two requirements that we added in the later stages and updated our repository with them likewise.
+
+-      What did you miss in your initial planning for the project (beyond just the requirements)
+
+Our sequence and class diagrams were not as detailed as they should have been. If we had not missed listing all the features in our diagrams, our project development would have been more focused with clearler defined goals.
+
+-	What process did you use (ie Scrum, Kanabn..), how was it managed, and what was observed? 
+
+We maintained a Kanban board and presented our milestones' summary using an agile dashboard. We maintained a list of “To Do”, “Done” and “ In progress”. We arranged our tasks into weekly sprints and the tasks that were not finished were automatically shifted to the backlogs and picked up in the next sprint. Our Kanban board was accessible to all the three members and actively used throughout the milestones. It helped us to generate reports and helped us to single out the tasks that needed more attention. It gave us an idea of our speed of development and a clear vision of our goals and check the status of our project.
+
+-	As a team, did you encounter issues with different team members developing with different IDEs?  In the future, would the team change anything in regard to the uniformity of development environments?
+
+	Yes, we encountered issues such as different members working with different IDEs however, we managed to collaborate and got to experience working with IDEs outside our comfort zone. We gained more knowledge from each other and learned working with new environments.
+       
+ -     If you were to estimate the efforts required for this project again, what would you consider?  (Really I am asking the team to reflect on the difference between what you thought it would take to complete the project vs what it actually took to deliver it).   
+
+This project required good coding and software development knowledge. We applied the software development methods we learnt throughout the course. However, this project required more regularity and collaboration than we expected.
+
+- What did your team do that you feel is unique or something that the team is especially proud of (was there a big learning moment that the team had in terms of gaining knowledge of a new concept/process that was implemented).
+
+Some members of our team were not familiar with php however through this project we were able to get more experience and when were able to create our login page using php it was a big moment for us as a team.
+
+
+
+       
+
 
