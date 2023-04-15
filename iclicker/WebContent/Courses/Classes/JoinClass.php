@@ -22,6 +22,7 @@ if (mysqli_num_rows($result) == 0) {
     ?>
     <html>
     <head>
+    <link rel ="stylesheet" href = "css/join_class.css">
     <title>Polling</title>
     </head>
     <body>
