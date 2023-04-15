@@ -26,12 +26,27 @@ $sql = "SELECT * FROM class WHERE course_id = '$course_id' AND end_time IS NULL"
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo '<html><body><title>Qclicker System</title>';
-    echo '<h1>' . $course_name . '</h1>';
-    echo '<h3><i><b>End Class:</b></i> <a href="Classes/end_class.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';
-    echo '<h3><i><b>Start Poll:</b></i> <a href="Classes/start_poll.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';    
-    echo '</body></html>';
+    // Class is running, check if poll is running
+    $poll_query = "SELECT * FROM poll WHERE class_id = '{$_SESSION['class_id']}' AND end_time IS NULL";
+    $poll_result = $conn->query($poll_query);
+
+    if ($poll_result->num_rows > 0) {
+        // Poll is running, show "End Poll" link
+        echo '<html><body><title>Qclicker System</title>';
+        echo '<h1>' . $course_name . '</h1>';
+        echo '<h3><i><b>End Class:</b></i> <a href="Classes/end_class.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';
+        echo '<h3><i><b>End Poll:</b></i> <a href="Classes/end_poll.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';    
+        echo '</body></html>';
+    } else {
+        // Poll is not running, show "Start Poll" link
+        echo '<html><body><title>Qclicker System</title>';
+        echo '<h1>' . $course_name . '</h1>';
+        echo '<h3><i><b>End Class:</b></i> <a href="Classes/end_class.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';
+        echo '<h3><i><b>Start Poll:</b></i> <a href="Classes/start_poll.php?course_id=' . urlencode($course_id) . '">Click Here</a></h3>';    
+        echo '</body></html>';
+    }
 } else {
+    // Class is not running, show "Start Class" link
     echo '<html><body><title>Qclicker System</title>';
     echo '<h1>' . $course_name . '</h1>';
     echo '<h3><i><b>Start Class:</b></i> <a href="Classes/startclass.php?course_name=' . urlencode($course_name).'&course_id=' . urlencode($course_id).'&instructor_id='.urlencode($instructor_id) . '">Click Here</a></h3>';
