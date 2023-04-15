@@ -47,6 +47,7 @@ if (mysqli_num_rows($result) == 0) {
     ?>
     <html>
     <head>
+    <link rel ="stylesheet" href = "css/join_class.css">
     <title>Polling</title>
     </head>
     <body>
@@ -67,7 +68,9 @@ if (mysqli_num_rows($result) == 0) {
     <?php } ?>
     <li>Correct answer: <?php echo $row['correct_answer']; ?></li>
     <li>Total responses: <?php echo mysqli_num_rows($result); ?></li>
-    <li>Number of correct responses: <?php echo $num_correct; ?></li>
+    <li> <a href = "../../dashboard.php"> Go Back </a>
+    
+
     </ul>
     </body>
     </html>
